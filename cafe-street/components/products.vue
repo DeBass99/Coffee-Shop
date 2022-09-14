@@ -40,5 +40,6 @@ h2{
 
     .spread-out{ 
         justify-content: space-around;
+        padding: 0px;
     }
 </style>

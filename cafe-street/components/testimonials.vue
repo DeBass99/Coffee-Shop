@@ -3,7 +3,7 @@
     <div class="row"> 
         <div class="col-md-5">
             <b-container class="align">
-            <h2> What they say about us </h2>
+            <h2> What they say <br class="hide-desktop"> about us </h2>
             <p> We always provide the best service and always maintain the quality of coffee </p>
         </b-container>
         </div>
@@ -207,5 +207,27 @@ color: #2F2105;
     padding-left: 35%;
 }
 
+.hide-desktop{ 
+    display: none;
+}
+
+@media only screen and (max-width:600px) { 
+    .hide-desktop{ 
+        display: block;
+    }
+
+    .align{ 
+        padding: 0%;
+    }
+
+    h2{ 
+        padding: 0px;
+        margin-top: -25px;
+    }
+
+    .text{ 
+        left: 0px;
+    }
+}
 
 </style>

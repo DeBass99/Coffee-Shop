@@ -2,11 +2,11 @@
 <div class="app">
   <NavBar />
   <div class="hero">
-    <img src="~/assets/coffee 1.png" alt="" class="coffee-1 object" data-value="2" v-on:mousemove="parallax">
-      <img src="~/assets/coffee 2.png" alt="" class="coffee-2 object" data-value="3" v-on:mousemove="parallax">
+    <img src="~/assets/coffee 1.png" alt="" class="coffee-1 hide-mobile object" data-value="2" v-on:mousemove="parallax">
+      <img src="~/assets/coffee 2.png" alt="" class="coffee-2 hide-mobile object" data-value="3" v-on:mousemove="parallax">
     <b-container>
     <div class="row hero-row">
-        <div class="col-md-6">
+        <div class="col-md-6 hero-texts">
             <h1> Enjoy your <mark>coffee</mark> before your activity </h1>
             <p class="head"> Boost your productivity and build your mood with a glass of coffee in the morning </p>
 
@@ -16,9 +16,9 @@
             </div>
         </div>
         <div class="col-md-6 coffee-head">
-            <button class="Cappuccino-btn"> <span> Cappuccino  </span> </button>
-            <button class="rating-btn"> <span> 4.8 </span> <img src="~/assets/star.png" alt=""></button>
-            <button class="price-btn"> <span> 12k </span> </button>
+            <button class="Cappuccino-btn hide-mobile"> <span> Cappuccino  </span> </button>
+            <button class="rating-btn hide-mobile"> <span> 4.8 </span> <img src="~/assets/star.png" alt=""></button>
+            <button class="price-btn hide-mobile"> <span> 12k </span> </button>
             <div class="smoke-wrap"><img class="smoke" src="~/assets/smoke.png" alt=""></div>
             <div class="smoke-wrap"><img class="smoke-2" src="~/assets/smoke.png" alt=""></div>
             <div class="smoke-wrap"><img class="smoke-3" src="~/assets/smoke.png" alt=""></div>
@@ -31,7 +31,7 @@
     <div class="popular">
     <Products 
     title="Popular"  />
-    <div class="back-drop"></div>
+    <div class="back-drop hide-mobile"></div>
 </div>
 
 <div class="delivery">
@@ -64,7 +64,7 @@
     <b-container>
         <div class="row">
             <div class="col-md-6"> <img src="~/assets/about coffee.png" alt=""> </div>
-            <div class="col-md-6">
+            <div class="col-md-6 about-texts">
                 <h2> About us </h2>
                 <h3> We provide quality coffee, and ready to deliver. </h3>
                 <p> We are a company that makes and distributes delicious drinks. our main product is made with a secret recipe and available in stores worldwide. </p>
@@ -85,6 +85,10 @@
     <Testimonials />
 </div>
 
+<div class="suscribe">
+    <Suscribe />
+</div>
+
 </div>
 </template>
 
@@ -93,10 +97,11 @@ import NavBar from '../components/navBar.vue';
 import Products from '../components/products.vue';
 import AllProducts from '../components/allProducts.vue';
 import Testimonials from '../components/testimonials.vue';
+import Suscribe from '../components/suscribe.vue';
 
 export default {
     name: "IndexPage",
-    components: { NavBar, Products, AllProducts, Testimonials },
+    components: { NavBar, Products, AllProducts, Testimonials, Suscribe },
 
     data(){
         return{ 
@@ -192,7 +197,13 @@ export default {
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
+        margin: 0px;
         transition: all .5s ease-in-out;
+    }
+
+    .order a{ 
+        margin: 10px 0px 0px 0px;
+        padding: 0px;
     }
 
     .order button:hover{ 
@@ -529,6 +540,7 @@ export default {
         border-radius: 12px;
         box-shadow: 0 10px 24px rgba(0,0,0,0.24);
         margin-top: -160px;
+        width: 100%;
 
     }
 
@@ -538,5 +550,48 @@ export default {
 
     .testimonials{ 
         margin-top: 120px;
+    }
+
+    .suscribe{ 
+        margin: 120px 0px;
+    }
+
+    @media only screen and (max-width: 600px) { 
+        .app{ 
+            overflow-x: hidden;
+        }
+
+        .hide-mobile{ 
+            display: none;
+        }
+
+        .hero-texts{ 
+            z-index: 2;
+        }
+
+        .coffee-head{ 
+            margin-top: -350px;
+            z-index: 1;
+        }
+
+        .popular{ 
+            margin-top: 50px;
+            padding: 0px;
+            margin-right: 0px;
+        }
+
+        .service{ 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-texts{ 
+            margin-top: 40px;
+        }
+
+        .smoke-wrap{ 
+        left: 0px;
+        top: -200px;
+        }
     }
 </style>
