@@ -3,7 +3,7 @@
         <b-container>
             <b-navbar toggleable="lg" type="light" variant="info" class="nav-edit">
               <div class="top-item">
-    <b-navbar-brand href="#"><svg width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <b-navbar-brand href="/"><svg width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M46 1.5C46 7.46737 44 13.5 41 17.4099C37 21.5 37 24 25.5222 24C14.0444 24 14 22.1151 9.61232 17.4099C5.22463 12.7047 5 7.96737 5 2H9C9 10.5 12.4388 14.5834 12.4388 14.5834C12.4388 14.5834 15.5222 20.0027 25.5222 20.0027C35.5222 20.0027 38 14.5834 38 14.5834C38 14.5834 41.4321 8.5 41.4321 1.5H46Z" fill="#2F2105"/>
 <path d="M41.4596 9.52731C41.8656 10.8568 42.6895 12.02 43.8091 12.8441C44.9286 13.6682 46.2841 14.1094 47.6742 14.102C49.0643 14.0946 50.415 13.6391 51.5258 12.8032C52.6365 11.9673 53.4481 10.7954 53.84 9.46165C54.2319 8.12787 54.1832 6.70327 53.7012 5.39935C53.2192 4.09543 52.3296 2.9817 51.1643 2.22351C49.9991 1.46533 48.6205 1.10311 47.2331 1.19062C45.8457 1.27814 44.5235 1.81073 43.4628 2.70933L45.6146 5.24924C46.1289 4.81353 46.77 4.5553 47.4427 4.51286C48.1154 4.47043 48.7838 4.64606 49.3488 5.01368C49.9138 5.3813 50.3452 5.92131 50.5789 6.55355C50.8126 7.18578 50.8362 7.87652 50.6462 8.52323C50.4561 9.16994 50.0626 9.73814 49.5241 10.1434C48.9855 10.5488 48.3306 10.7696 47.6566 10.7732C46.9825 10.7768 46.3253 10.5629 45.7825 10.1633C45.2396 9.76371 44.8401 9.19973 44.6433 8.55507L41.4596 9.52731Z" fill="#2F2105"/>
 <path d="M39 1.59495C39 5.94584 37.525 10.1185 34.8995 13.1951C32.274 16.2716 28.713 18 25 18C21.287 18 17.726 16.2716 15.1005 13.1951C12.475 10.1185 11 5.94584 11 1.59495C11 1.59495 19 5.18358 25 1.59495C31 -1.99369 39 1.59495 39 1.59495Z" fill="#FF912B"/>
@@ -22,11 +22,10 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav class="mx-auto">
-        <b-nav-item class="links"> <nuxt-link class="links" to="/"> Home </nuxt-link> </b-nav-item>
-        <b-nav-item class="links"> <nuxt-link class="links" to="/products"> Products </nuxt-link> </b-nav-item>
-        <b-nav-item class="links"> <nuxt-link class="links" to="/about"> About Us </nuxt-link> </b-nav-item>
-        <b-nav-item class="links"> <nuxt-link class="links" to="/delivery"> Delivery </nuxt-link> </b-nav-item>
+      <b-navbar-nav class="mx-auto links">
+        <b-nav-item > <nuxt-link  to="/"> <div class="col"> <p class="effect-underline"> Home </p>  </div> </nuxt-link> </b-nav-item>
+        <b-nav-item > <nuxt-link  to="/products"> <div class="col"> <p class="effect-underline"> Coffees </p>  </div> </nuxt-link> </b-nav-item>
+        <b-nav-item > <nuxt-link  to="/about"> <div class="col"> <p class="effect-underline"> About Us </p>  </div> </nuxt-link> </b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -101,11 +100,17 @@
         color:#FF912B;
     }
 
-    a.nuxt-link-active {
-    font-weight: 600;
-  }
   a.nuxt-link-exact-active {
   color:#FF912B;
+  font-weight: 600;
+}
+
+.links{ 
+  margin-top: 7px;
+}
+
+.col{ 
+  padding: 0px;
 }
 
 
@@ -131,8 +136,33 @@
         height: auto;
         padding: 14px;
         background: #FFFFFF;
+        filter: drop-shadow(6px 2px 24px rgba(0, 0, 0, 0.13));
         border-radius: 35px;
     }
+
+        /*effect-underline*/
+.effect-underline:after {
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1.2em;
+  width: 45%;
+  border-bottom: 4px solid #FF912B;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+    transform-origin: left;
+}
+
+.effect-underline:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(0);
+	transform: scale(1);
+}
 
     .hide-desktop{ 
       display: none;

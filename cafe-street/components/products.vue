@@ -3,12 +3,13 @@
     <div class="products">
     <h2> {{title}} </h2>
     <b-card-group deck class="spread-out">
-    <Card v-for="product in products"
+    <Card v-for="product in  filterItems(products)"
     :key="product.id"
     :name="product.name"
     :pic="product.image"
     :price="product.price"
     :details="product.details" />
+
     </b-card-group>
     </div>
 </b-container>
@@ -16,7 +17,7 @@
 
 <script>
 import Card from './card.vue';
-import json from '~/js/data.json'
+import json from '~/js/all.json'
     export default {
     props: ['title'],
 
@@ -25,6 +26,14 @@ import json from '~/js/data.json'
             products: json
         }
     },
+
+    methods: { 
+        filterItems: function(items) {
+      return items.filter(function(item) {
+        return item.id > 6;
+      })
+    }},
+    
     components: { Card }
 }
 </script>

@@ -18,15 +18,21 @@
 
     <div class="details">
         <p> {{details}} </p>
-        <button to="#" class="card-cart"> <img src="~/assets/card cart.png" alt=""> </button>
+        <button class="card-cart" > <nuxt-link :to= "`/${products.id}`" > <img src="~/assets/card cart.png" alt="" > </nuxt-link></button>
     </div>
   </b-card>
 </div>
 </template>
 
 <script>
+    import json from '~/js/all.json'
     export default {
-        props: [ 'name', 'price', 'pic', 'details' ]
+        data(){
+        return{ 
+            products: json,
+        }
+    },
+        props: [ 'name', 'price', 'pic', 'details', 'link' ],
     }
 </script>
 

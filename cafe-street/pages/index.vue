@@ -7,7 +7,7 @@
     <b-container>
     <div class="row hero-row">
         <div class="col-md-6 hero-texts">
-            <h1> Enjoy your <mark>coffee</mark> before your activity </h1>
+            <h1 class="effect-underline"> Enjoy your <mark>coffee</mark> before your activity </h1>
             <p class="head"> Boost your productivity and build your mood with a glass of coffee in the morning </p>
 
             <div class="order">
@@ -36,7 +36,9 @@
 
 <div class="delivery">
     <b-container>
-        <h2> How to use delivery service </h2>
+        <div class="row">
+            <div class="col-md">
+        <h2 class="effect-underline"> How to use delivery service </h2>
 
         <div class="service">
             <div class="one"> 
@@ -57,6 +59,9 @@
                 <p> Choose delivery service </p>
             </div>
         </div>
+               
+    </div>
+        </div>
     </b-container>
 </div>
 
@@ -68,7 +73,7 @@
                 <h2> About us </h2>
                 <h3> We provide quality coffee, and ready to deliver. </h3>
                 <p> We are a company that makes and distributes delicious drinks. our main product is made with a secret recipe and available in stores worldwide. </p>
-                <button> Get your coffee </button>
+                <button> <nuxt-link to="/about"> Read More </nuxt-link> </button>
             </div>
         </div>
     </b-container>
@@ -535,6 +540,11 @@ export default {
     margin-top: 40px;
     }
 
+    .about a{ 
+        text-decoration: none;
+        color: #F4AE26;
+    }
+
     .about img{ 
         border: 10px solid #FAF4EB;
         border-radius: 12px;
@@ -555,6 +565,30 @@ export default {
     .suscribe{ 
         margin: 120px 0px;
     }
+
+    /*effect-underline*/
+.effect-underline:after {
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1.2em;
+  width: 45%;
+  border-bottom: 4px solid #FF912B;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+    transform-origin: left;
+}
+
+.effect-underline:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(0);
+	transform: scale(1);
+}
 
     @media only screen and (max-width: 600px) { 
         .app{ 
@@ -592,6 +626,10 @@ export default {
         .smoke-wrap{ 
         left: 0px;
         top: -200px;
+        }
+
+        .suscribe{ 
+            margin-bottom: 0px;
         }
     }
 </style>

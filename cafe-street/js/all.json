@@ -40,5 +40,27 @@
         "details": "Wafle with Ice cream",
         "price": "21k",
         "image": "/product images/Waffle Ice Crem.png"
+    },
+
+    {
+        "id": 7,
+        "name": "Vanilla Latte",
+        "price": "21k",
+        "details": "espresso, steamed milk, and vanilla syrup",
+        "image": "product images/Vanilla Latte.png"
+    },
+    {
+        "id": 8,
+        "name": "Espresso",
+        "details": "hot water and finely ground beans",
+        "price": "21k",
+        "image": "/product images/Espresso.png"
+    },
+    {
+        "id": 9,
+        "name": "Hazelnut Latte",
+        "details": "Espresso, milk flavor and hazelnut syrup",
+        "price": "21k",
+        "image": "/product images/Hazelnut Latte.png"
     }
     ]

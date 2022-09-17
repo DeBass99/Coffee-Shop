@@ -217,7 +217,7 @@ color: #2F2105;
     }
 
     .align{ 
-        padding: 0%;
+        padding-left: 5%;
     }
 
     h2{ 
