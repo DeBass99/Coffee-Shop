@@ -1,5 +1,11 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
+  ssr: true,
+  generate: {
+    fallback: true
+  },
+  
   head: {
     title: 'cafe-street',
     htmlAttrs: {
