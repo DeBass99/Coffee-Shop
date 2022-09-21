@@ -18,7 +18,7 @@
 
     <div class="details">
         <p> {{details}} </p>
-        <button class="card-cart" > <nuxt-link :to= "`/${products.id}`" > <img src="~/assets/card cart.png" alt="" > </nuxt-link></button>
+        <button class="card-cart"> <nuxt-link :to= "`/${products.id}`" > <img src="~/assets/card cart.png" alt="" > </nuxt-link></button>
     </div>
   </b-card>
 </div>
@@ -32,6 +32,8 @@
             products: json,
         }
     },
+
+
         props: [ 'name', 'price', 'pic', 'details', 'link' ],
     }
 </script>
