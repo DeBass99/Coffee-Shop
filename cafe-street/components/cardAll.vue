@@ -19,7 +19,7 @@
        </div>
    
        <div class="details">
-           <p> {{details}} </p>
+           <p> {{product.details}} </p>
            <button class="card-cart"> <nuxt-link :to= "`/${product.id}`" > <img src="~/assets/card cart.png" alt="" > </nuxt-link></button>
        </div>
      </b-card>
@@ -180,9 +180,5 @@
     .spread-out{ 
     justify-content: center;
        }
-
-       .card{ 
-        
-       }
-       }
+    }
    </style>
