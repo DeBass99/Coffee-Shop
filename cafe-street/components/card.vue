@@ -174,4 +174,12 @@ a{
         justify-content: space-around;
         padding: 0px;
     }
+
+    @media only screen and (max-width:600px){ 
+    .spread-out{ 
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+       }
+    }
 </style>

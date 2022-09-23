@@ -2,7 +2,9 @@
     <b-container>
     <div class="products">
     <h2> {{title}} </h2>
+    <div class="card">
     <CardAll />
+</div>
     </div>
 </b-container>
 </template>
@@ -24,4 +26,11 @@ h2{
     font-size: 32px;
     margin-bottom: 32px;
     }
+
+    .card{ 
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none;
+}
 </style>

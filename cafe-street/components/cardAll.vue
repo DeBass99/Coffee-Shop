@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-card-group>
-            <b-row cols="3" class="spread-out">
+            <b-row cols="1" cols-sm="2" cols-md="3" cols-lg="3" class="spread-out">
      <b-card  v-for="product in products"
        :img-src="`${product.image}`"
        img-alt="Image"
@@ -170,7 +170,19 @@
    }
    
    .spread-out{ 
-           justify-content: space-around;
-           padding: 0px;
+    display: flex;
+    background: none;
+    justify-content: space-around;
+    padding: 0px;
+       }
+
+       @media only screen and (max-width:600px){ 
+    .spread-out{ 
+    justify-content: center;
+       }
+
+       .card{ 
+        
+       }
        }
    </style>
