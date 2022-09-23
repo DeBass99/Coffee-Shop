@@ -1,7 +1,8 @@
 <template>
  <div>
-  <b-card
-    :img-src="pic"
+    <b-card-group deck class="spread-out">
+  <b-card  v-for="product in  filterItems(products)"
+    :img-src="`${product.image}`"
     img-alt="Image"
     img-top
     tag="article"
@@ -12,15 +13,16 @@
     <div class="rating"> <p>4.8</p> <img src="~/assets/star.png" alt=""> </div>
 
     <div class="name-price">
-        <h4> {{name}} </h4>
-        <p> {{price}} </p>
+        <h4> {{product.name}} </h4>
+        <p> {{product.price}} </p>
     </div>
 
     <div class="details">
         <p> {{details}} </p>
-        <button class="card-cart"> <nuxt-link :to= "`/${products.id}`" > <img src="~/assets/card cart.png" alt="" > </nuxt-link></button>
+        <button class="card-cart"> <nuxt-link :to= "`/${product.id}`" > <img src="~/assets/card cart.png" alt="" > </nuxt-link></button>
     </div>
   </b-card>
+</b-card-group>
 </div>
 </template>
 
@@ -33,8 +35,13 @@
         }
     },
 
-
-        props: [ 'name', 'price', 'pic', 'details', 'link' ],
+    methods: { 
+        filterItems: function(items) {
+      return items.filter(function(item) {
+        return item.id > 6;
+      })
+    }},
+   
     }
 </script>
 
@@ -162,4 +169,9 @@ a{
     text-decoration: none;
     color: #000;
 }
+
+.spread-out{ 
+        justify-content: space-around;
+        padding: 0px;
+    }
 </style>
