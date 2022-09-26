@@ -7,7 +7,7 @@
     <b-container>
     <div class="row hero-row">
         <div class="col-md-6 hero-texts">
-            <h1 class="effect-underline"> Enjoy your <mark>coffee</mark> before your activity </h1>
+            <h1 class="effect-underline first-text"> Enjoy your <mark>coffee</mark> before your activity </h1>
             <p class="head"> Boost your productivity and build your mood with a glass of coffee in the morning </p>
 
             <div class="order">
@@ -123,6 +123,12 @@ export default {
         move.style.transform = " translateY(" + Y + "px)";
       })
     }
+    },
+
+    //gsap mounted animation
+    mounted(){
+        var tl = gsap.timeline({defaults:{duration: 1}});
+        tl.from('.first-text', {y: -100, duration: 1, ease: Back.easeOut, opacity: 0})
     }
 }
 </script>

@@ -19,6 +19,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/coffee icon.png' }
+    ],
+    script: [
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" },
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"},
+      { src: '/vender/SplitText.min.js'}
     ]
   },
 
@@ -47,5 +52,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+     /*
+         ** You can extend webpack config here
+         */
+         extend() {},
+         transpile: ['gsap'],
   }
 }
