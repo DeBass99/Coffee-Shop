@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div class="app">
     <b-card-group deck class="spread-out">
   <b-card  v-for="product in  filterItems(products)"
     :img-src="`${product.image}`"
@@ -48,6 +48,12 @@
 </script>
 
 <style scoped>
+
+    .app{ 
+        display: flex;
+        justify-content: center;
+        
+    }
 
 .card{ 
     font-family: 'Poppins';

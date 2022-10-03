@@ -9,7 +9,7 @@
         </div>
 
         <div class="col-md-7">
-            <carousel paginationActiveColor="#FF912B" paginationColor="#F8E9D2" paginationSize="10" easing="linear" speed="500"  :perPageCustom="[[400, 1], [768, 3]]">
+            <carousel paginationActiveColor="#FF912B" paginationColor="#F8E9D2" paginationSize="10" easing="linear" speed="500"  :perPageCustom="[[400, 2], [768, 3]]">
             <slide>
                 <div class="card-bg">
                  <img src="~/assets/tes 1.png" alt="">
