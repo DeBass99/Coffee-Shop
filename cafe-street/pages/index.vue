@@ -1,5 +1,26 @@
 <template>
 <div class="app">
+    <div class="loading">
+
+        <span>
+        <svg class="drink coffee" width="266" height="171" viewBox="0 0 266 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M265.951 15.3719C265.951 56.5842 251.98 96.1082 227.11 125.25C202.241 154.391 168.511 170.763 133.341 170.763C98.1708 170.763 64.4405 154.391 39.5714 125.25C14.7023 96.1082 0.730835 56.5842 0.730835 15.3719C0.730835 15.3719 76.508 49.3639 133.341 15.3719C190.174 -18.6202 265.951 15.3719 265.951 15.3719Z" fill="#FF912B"/>
+        </svg>
+        </span>
+
+
+        <svg class="cup coffee" width="466" height="285" viewBox="0 0 466 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="cup-body" d="M389.256 14.4725C389.256 70.9963 370.312 128.138 341.895 165.173C304.007 203.915 304.007 227.596 195.287 227.596C86.5678 227.596 86.1473 209.742 44.5865 165.173C3.02568 120.605 0.897949 75.7323 0.897949 19.2085H38.7865C38.7865 99.7218 71.3593 138.4 71.3593 138.4C71.3593 138.4 100.566 189.733 195.287 189.733C290.009 189.733 313.479 138.4 313.479 138.4C313.479 138.4 345.988 80.7775 345.988 14.4725H389.256Z" fill="#2F2105"/>
+        <path class="cup-body" d="M346.249 90.5083C350.094 103.102 357.898 114.12 368.503 121.926C379.107 129.732 391.947 133.911 405.114 133.841C418.281 133.77 431.075 129.456 441.597 121.538C452.118 113.62 459.805 102.52 463.518 89.8864C467.23 77.2526 466.768 63.7586 462.203 51.4077C457.637 39.0568 449.211 28.5073 438.173 21.3257C427.136 14.1441 414.078 10.7131 400.936 11.542C387.794 12.371 375.27 17.4157 365.223 25.9274L385.605 49.9858C390.477 45.8587 396.549 43.4127 402.921 43.0107C409.293 42.6088 415.624 44.2724 420.976 47.7546C426.328 51.2367 430.414 56.3518 432.628 62.3404C434.842 68.329 435.065 74.8718 433.265 80.9975C431.465 87.1233 427.737 92.5053 422.637 96.3441C417.535 100.184 411.332 102.276 404.947 102.31C398.562 102.344 392.337 100.318 387.196 96.5326C382.053 92.7475 378.269 87.4054 376.405 81.2991L346.249 90.5083Z" fill="#2F2105"/>
+         <path class="cup-base" d="M367.994 256.012H22.1599C15.6486 256.012 10.3701 262.373 10.3701 270.22C10.3701 278.067 15.6486 284.429 22.1599 284.429H367.994C374.505 284.429 379.784 278.067 379.784 270.22C379.784 262.373 374.505 256.012 367.994 256.012Z" fill="#2F2105"/>
+        </svg>
+
+
+        <div class="background bg1"></div>
+        <div class="background bg2"></div>
+
+    </div>
+
   <NavBar />
   <div class="hero">
     <img src="~/assets/coffee 1.png" alt="" class="coffee-1 hide-mobile object" data-value="2" v-on:mousemove="parallax">
@@ -28,6 +49,7 @@
     </b-container>
     </div>
 
+    <section class="load-hide">
     <div class="popular">
     <Products 
     title="Popular"  />
@@ -93,6 +115,7 @@
 <div class="suscribe">
     <Suscribe />
 </div>
+</section>
 
 </div>
 </template>
@@ -128,7 +151,19 @@ export default {
     //gsap mounted animation
     mounted(){
         var tl = gsap.timeline({defaults:{duration: 1}});
-        tl.from('.first-text', {y: -100, duration: 1, ease: Back.easeOut, opacity: 0})
+
+        tl.from('.cup-body', {scale:0, opacity:0,ease: "back.inOut(1.7)", duration:.5})
+        .from('.cup-base', {scaleX:0, opacity:0,ease: "back.inOut(1.7)", duration:.6}) 
+        .from('.drink', {scale: 0, duration: 1.5, ease: 'bounce.out'}) 
+        .to('.background', {scaleY:0, ease: 'back.out', duration:  .5, stagger: .3})
+        .to('.coffee', {y: -50, opacity: 0, ease:'power.out', duration: .3}, '= -1');
+
+        //Show content after load
+        setTimeout(function() { 
+        document.querySelector('.load-hide').className = "";
+        }, 2500)
+
+        
     }
 }
 </script>
@@ -139,6 +174,58 @@ export default {
         font-family: 'Poppins';
         overflow-x: hidden;
     }
+
+    .loading{ 
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .load-hide{ 
+        display: none;
+    }
+
+    .bg1{ 
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 9;
+        background-color: #F7EBDA;
+    }
+
+    .bg2{ 
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 8;
+        background-color: #2F2105;
+    }
+
+    .cup{ 
+        position: absolute;
+        z-index: 14;
+    }
+
+    .cup-base{ 
+        transform-origin: left;
+    }
+
+    .drink{ 
+        position: relative;
+        z-index: 12;
+        left: -40px;
+        top: -55px
+    }
+
+    .background{
+        transform-origin: top;
+    }
+
+
+
 
 .hero{ 
         background: #F7EBDA;
@@ -228,6 +315,8 @@ export default {
         color: #F4AE26;
         margin-left: 32px;
     }
+
+
 
     .coffee-head img{ 
         width: 100%;
@@ -473,12 +562,14 @@ export default {
       position: absolute;
       right: 0;
       top: 0;
+      z-index: 1;
     }
 
     .coffee-2{ 
       position: absolute;
       left: 0;
       top: 620px;
+      z-index: 16;
     }
 
 
@@ -599,6 +690,10 @@ export default {
     @media only screen and (max-width: 600px) { 
         .app{ 
             overflow-x: hidden;
+        }
+
+        .loading{ 
+            display: none;
         }
 
         .hide-mobile{ 

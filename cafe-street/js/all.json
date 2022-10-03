@@ -16,7 +16,7 @@
     {
         "id": 3,
         "name": "Coffe Ice",
-        "details": "Espresso, milk flavor and hazelnut syrup",
+        "details": "Espresso and milk flavor ",
         "price": "21k",
         "image": "/product images/Coffe Ice Cream.png"
     },
@@ -46,7 +46,7 @@
         "id": 7,
         "name": "Vanilla Latte",
         "price": "21k",
-        "details": "espresso, steamed milk, and vanilla syrup",
+        "details": "espresso and steamed milk",
         "image": "product images/Vanilla Latte.png"
     },
     {
@@ -59,7 +59,7 @@
     {
         "id": 9,
         "name": "Hazelnut Latte",
-        "details": "Espresso, milk flavor and hazelnut syrup",
+        "details": "Espresso and milk flavor ",
         "price": "21k",
         "image": "/product images/Hazelnut Latte.png"
     }

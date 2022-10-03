@@ -52,8 +52,18 @@ Whether you’re a coffee drinker, coffee shop owner, or wholesale buyer looking
 import NavBar from '../components/navBar.vue';
 import Testimonials from '../components/testimonials.vue';
 import Suscribe from '../components/suscribe.vue';
-    export default {
-    components: { NavBar, Testimonials, Suscribe }
+import { mapState } from 'vuex'
+    
+
+export default {
+    components: { NavBar, Testimonials, Suscribe },
+
+    computed: {
+        ...mapState([
+            'data1',
+            'data3'
+    ])
+    }
 }
 </script>
 

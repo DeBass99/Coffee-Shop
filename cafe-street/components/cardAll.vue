@@ -8,7 +8,7 @@
        img-top
        tag="article"
        style="max-width: 20rem;"
-       class="mb-2"
+       class="mb-2 card-main"
      >
    
        <div class="rating"> <p>4.8</p> <img src="~/assets/star.png" alt=""> </div>
@@ -36,7 +36,8 @@
                products: json,
            }
        },
-   
+
+
        }
    </script>
    

@@ -36,7 +36,7 @@
         </b-nav-form>
 
         <b-navbar-nav class="checkout">
-            <b-nav-item to="#" class="hide-mobile"><img src="~/assets/cart.png" alt="cart"></b-nav-item>
+            <b-nav-item class="hide-mobile"><nuxt-link to="/orders"><img src="~/assets/cart.png" alt="cart"></nuxt-link></b-nav-item>
         </b-navbar-nav>
       </b-navbar-nav>
     </b-collapse>

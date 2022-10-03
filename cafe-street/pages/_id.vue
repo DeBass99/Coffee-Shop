@@ -14,10 +14,11 @@
             <h3> {{product.name}} </h3>
             <p> {{product.details}}</p>
             <p class="price"> {{product.price}} </p>
-
-            <b-form-input type="number" class="quantity" ></b-form-input>
-
-            <button type="submit" class="submit"> Add to Cart </button>
+            
+            <div class="order-btn">
+            <Order 
+            :product="product" />
+            </div>
 
             </div>
         </div>
@@ -46,6 +47,7 @@
 import NavBar from '../components/navBar.vue';
 import Products from '../components/products.vue';
 import Suscribe from '../components/suscribe.vue';
+import Order from '../components/order.vue';
     export default {
     data() {
         return {
@@ -58,7 +60,7 @@ import Suscribe from '../components/suscribe.vue';
             return this.products.find(v => v.id == this.$route.params.id);
         }
     },
-    components: { NavBar, Products, Suscribe }
+    components: { NavBar, Products, Suscribe, Order }
 }
 </script>
 
@@ -134,24 +136,16 @@ input[type=number]::-webkit-inner-spin-button {
   opacity: 1;
 }
 
-button.submit{ 
-    width: 253.83px;
-    height: 33.73px;
-    background: #2F2105;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: center;
-    color: #fff;
-    margin-top: 30px;
-}
-
 .popular{ 
     margin-top: 160px;
 }
 
 .suscribe{ 
     margin: 160px 0px;
+}
+
+.order-btn{ 
+    margin-top: 75px;
 }
 
 .back-drop{ 
