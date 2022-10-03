@@ -10,7 +10,7 @@
         
         <h3> {{order.details}} </h3>
 
-        <h3> {{order.price}} </h3>
+        <h3 class="price"> {{order.price}} </h3>
     </div>
 
     </div>
@@ -52,5 +52,26 @@ h3{
 
 h3.name{ 
     margin-left: 150px
+}
+
+@media only screen and (max-width: 600px){ 
+    .texts{ 
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    h3.name{ 
+        margin-left: 0px;
+        font-size: 24px;
+    }
+
+    h3{ 
+        font-size:16px;
+    }
+
+    h3.price{
+        color: #ff912b;
+    }
 }
 </style>

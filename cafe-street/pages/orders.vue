@@ -94,4 +94,9 @@ hr{
     margin: 170px 0px;
 }
 
+@media only screen and (max-width:600px){ 
+    .heading{ 
+        display: none;
+    }
+}
 </style>
