@@ -14,7 +14,7 @@
 </b-navbar-brand>
 
 
-      <b-nav-item to="#" class="hide-desktop"><img src="~/assets/cart.png" alt="cart"></b-nav-item>
+      <b-nav-item to="/orders" class="hide-desktop"><img src="~/assets/cart.png" alt="cart"></b-nav-item>
       </div>
 
     

@@ -112,7 +112,9 @@ h2{
     }
 
     .wrap button{ 
-        margin-top: 60px;
+        margin-top: 25px;
+        color: #2F2105;
+        background-color: #fff;
     }
     
 
